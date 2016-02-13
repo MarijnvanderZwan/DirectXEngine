@@ -14,10 +14,15 @@
 #include "lightshaderclass.h"
 #include "lightclass.h"
 
+#include "textclass.h"
+
+#include "textureshaderclass.h"
+#include "bitmapclass.h"
+
 /////////////
 // GLOBALS //
 /////////////
-const bool FULL_SCREEN = true;
+const bool FULL_SCREEN = false;
 const bool VSYNC_ENABLED = true;
 const float SCREEN_DEPTH = 1000.0f;
 const float SCREEN_NEAR = 0.1f;
@@ -39,13 +44,17 @@ public:
 
 private:
 	bool Render(float);
+	bool RenderScene(float);
 
 private:
 	D3DClass* m_D3D;
 	CameraClass* m_Camera;
 	ModelClass* m_Model;
 	LightShaderClass* m_LightShader;
-	LightClass* m_Light;
+	LightClass* m_Light;	
+	TextureShaderClass* m_TextureShader;
+	BitmapClass* m_Bitmap;
+	TextClass* m_Text;
 };
 
 #endif
